@@ -2,3 +2,7 @@
 CS332 Assignment #3
 
 Citations:
+
+
+Hello Arman
+-Remi
