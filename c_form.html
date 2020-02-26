@@ -27,24 +27,22 @@
 
         // Translate each input value into a list item
         const inputs = form.find('input'); // JQuery object represent all inputs
-        $('#history').append(inputs);
-        for (let input of inputs) {
-          input = $(input); // Turn into a JQuery object
-          const li = $(`<li>${input.val()}</li>`); // New list item
-          list.append(li);
-          input.val(''); // Empty out the box
-        }
+        const question = $(`<li>${inputs.val()}</li>`); // New list item
+
+
+        // for (let input of inputs) {
+        //   input = $(input); // Turn into a JQuery object
+        //   const li = $(`<li>${input.val()}</li>`); // New list item
+        //   list.append(li);
+        //   input.val(''); // Empty out the box
+        // }
 
         counter++;
-<<<<<<< HEAD
-        const p = $(`<p>${list}</p>`);
-=======
         const p = $(`<p>question #${counter}</p>`);
->>>>>>> afb3925b5247207e5cfc898aefee33342d04e3f7
 
         // Add to the page
         $('#history').append(p);
-        $('#history').append(list);
+        $('#history').append(question);
       });
 
     </script>
