@@ -8,13 +8,13 @@
     <h1>Enter your question here</h1>
     <form id="Q">
       <input type="text" id = "q">
-      <button type="submit">Add question</button>
+      <button id = "editQ" type="submit">Add question</button>
     </form>
     <form id="A">
       <input type="text" id="a">
       <button type="submit">Add answers</button>
     </form>
-    <h3></h3>
+    <h3>Hello</h3>
     <ul>
       <li id = "placeholder">enter a question</li>
 
@@ -32,7 +32,8 @@
 
       // Add a non-empty item to the list
       if (item) {
-        $('h3').append()`${item}`
+        $('h3').text(`${item}`)
+        $('#editQ').text('Edit')
         }
       });
             // Add to the to-do list
