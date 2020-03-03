@@ -6,44 +6,51 @@
   </head>
   <body>
     <h1>Enter your question here</h1>
-    <form>
-      <input type="text" name="question">
-      <button type="submit">Add answers</button>
+    <form id="Q">
+      <input type="text">
+      <button type="submit" id="A">Add question</button>
     </form>
-    <div id="history"></div>
+    <form id="A">
+      <input type="text">
+      <button type="submit" id="A">Add answers</button>
+    </form>
+    <ul>
+      <li id = "placeholder">enter a question</li>
+    </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
+            // Add to the to-do list
+      $('#A').on('submit', function(event) {
+      event.preventDefault();
 
-      // Number of times the form has been submitted
-      let counter = 0;
+              // Grab the text and empty the box
+      const input = $('input');
+      const item = input.val();
+      input.val('');
 
-      // Respond to submit events
-      $('form').on('submit', function(event) {
-        const form = $(this); // JQuery object representing the form
-        event.preventDefault(); // Don't really submit the form
-
-        // Create a new list
-        const list = $('<ul></ul>');
-
-        // Translate each input value into a list item
-        const inputs = form.find('input'); // JQuery object represent all inputs
-        const question = $(`<li>${inputs.val()}</li>`); // New list item
-
-
-        // for (let input of inputs) {
-        //   input = $(input); // Turn into a JQuery object
-        //   const li = $(`<li>${input.val()}</li>`); // New list item
-        //   list.append(li);
-        //   input.val(''); // Empty out the box
-        // }
-
-        counter++;
-        const p = $(`<p>question #${counter}</p>`);
-
-        // Add to the page
-        $('#history').append(p);
-        $('#history').append(question);
+      // Add a non-empty item to the list
+      if (item) {
+      $('#placeholder').remove();
+      $('ul').append($(`
+            <li>
+             <span>${item}</span>
+             <button>Delete</button>
+            </li>
+          `));
+        }
       });
+
+      // Delete from the to-do list
+      $('ul').on('click', 'button', function(event) {
+        $(this).closest('li').remove();
+
+        // Put back the placeholder if it's empty
+        const items = $('li');
+        if (items.length == 0) {
+          $('ul').append($('<li id="placeholder">Think of something to do!</li>'));
+        }
+      });
+
 
     </script>
   </body>
