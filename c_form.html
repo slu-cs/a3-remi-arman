@@ -14,15 +14,13 @@
       <input type="text" id="a">
       <button type="submit">Add answers</button>
     </form>
-    <ul id = "outer">
+    <h3></h3>
+    <ul>
       <li id = "placeholder">enter a question</li>
-      <ul id = "inner">
-      </ul>
+
     </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
-
-
 
       $('#Q').on('submit', function(event) {
       event.preventDefault();
@@ -34,13 +32,7 @@
 
       // Add a non-empty item to the list
       if (item) {
-      $('#placeholder').remove();
-      $('#outer').append($(`
-            <li>
-             <span>Q:${item}</span>
-             <button>Delete</button>
-            </li>
-          `));
+        $('h3').append()`${item}`
         }
       });
             // Add to the to-do list
@@ -55,7 +47,7 @@
       // Add a non-empty item to the list
       if (item) {
       $('#placeholder').remove();
-      $('#inner').append($(`
+      $('ul').append($(`
             <li>
              <span>A:${item}</span>
              <button>Delete</button>
