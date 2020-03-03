@@ -11,7 +11,7 @@
       <button type="submit">Add question</button>
     </form>
     <form id="A">
-      <input type="text">
+      <input type="text" id="g">
       <button type="submit">Add answers</button>
     </form>
     <ul>
@@ -24,7 +24,7 @@
       event.preventDefault();
 
               // Grab the text and empty the box
-      const input = $('input');
+      const input = $('#g');
       const item = input.val();
       input.val('');
 
