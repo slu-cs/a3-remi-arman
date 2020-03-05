@@ -5,22 +5,24 @@
     <title>JQuery Objects</title>
   </head>
   <body>
-    <h1>Make Your Poll</h1>
-    <form id="Q">
-      <input type="text" id = "q">
-      <button id = "editQ" type="submit">Add question</button>
-    </form>
-    <form id="A">
-      <input type="text" id="a">
-      <button type="submit">Add answers</button>
-    </form>
-    <form id = "S">
-      <button type="submit">Submit</button>
-    </form>
-    <h3></h3>
-    <ol>
+    <body id="init">
+      <h1>Make Your Poll</h1>
+      <form id="Q">
+        <input type="text" id = "q">
+        <button id = "editQ" type="submit">Add question</button>
+      </form>
+      <form id="A">
+        <input type="text" id="a">
+        <button type="submit">Add answers</button>
+      </form>
+      <form id = "S">
+        <button type="submit">Submit</button>
+      </form>
+      <h3></h3>
+      <ol>
 
-    </ol>
+      </ol>
+    </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
 
@@ -72,13 +74,11 @@
         const answers = $('span');
         const save_answer = [];
         for(let answer of answers){
-          save_answer.push(answer);
           answer = $(answer)
-          console.log(answer.text());
+          save_answer.push(answer.text());
         }
-        //console.log(save_answer);
 
-
+        $('h1').text(save_question);
 
       });
 
