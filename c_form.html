@@ -69,13 +69,12 @@
 
         event.preventDefault();
         const save_question = $('h3').text();
-        const ans = $(this);
-        const answers = ans.find('span')
+        const answers = $('span');
         const save_answer = [];
-        for(let answer in answers){
-          //save_answer.append(answer);
+        for(let answer of answers){
+          save_answer.push(answer);
           answer = $(answer)
-          console.log(answer);
+          console.log(answer.text());
         }
         //console.log(save_answer);
 
