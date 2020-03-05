@@ -22,6 +22,8 @@
       <ol>
 
       </ol>
+      <form id = "remi">
+      </form>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
@@ -85,11 +87,11 @@
         $('h3').remove();
         $('ol').remove();
 
-
         for (let a of save_answer){
-        var para = document.createElement("P");
-        para.innerText = a;
-        document.body.appendChild(para);
+          var para = document.createElement('input');
+          para.setAttribute("type", "radio");
+          para.value = a;
+          document.body.appendChild(para);
 }
       });
 
