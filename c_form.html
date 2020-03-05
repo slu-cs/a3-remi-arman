@@ -79,7 +79,18 @@
         }
 
         $('h1').text(save_question);
+        $('#Q').remove();
+        $('#A').remove();
+        $('#S').remove();
+        $('h3').remove();
+        $('ol').remove();
 
+
+        for (let a of save_answer){
+        var para = document.createElement("P");
+        para.innerText = a;
+        document.body.appendChild(para);
+}
       });
 
 
