@@ -87,12 +87,13 @@
         $('h3').remove();
         $('ol').remove();
 
-        for (let a of save_answer){
-          var para = document.createElement('input');
-          para.setAttribute("type", "radio");
-          para.value = a;
-          document.body.appendChild(para);
-}
+        for (let a of save_answer) {
+          const r = $(`<input type="radio" id="radio1" name="radio" value= "${a}">`);
+          const w = $(`<label for="radio1">"${a}"</label>`);
+          $("#remi").append(r);
+          $("#remi").append(w);
+        }
+
       });
 
 
