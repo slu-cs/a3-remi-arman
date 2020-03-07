@@ -24,6 +24,9 @@
       </ol>
       <form id = "R">
       </form>
+      <form id = "D">
+      </form>
+      <h4></h4>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
@@ -97,9 +100,10 @@
 
         };
 
-        const submit_b = $(`<button type="submit">submit</button> <button type="submit">done</button>`)
-
+        const submit_b = $(`<button id = "S_Answer" type="submit">submit</button>`)
+        const done_b = $(`<button type="submit">done</button>`)
         $("#R").append(submit_b);
+        $("#D").append(done_b);
 
       });
 
@@ -118,9 +122,22 @@
         };
         console.log(count_answers);
 
+      });
+      $('#D').on('submit', function(event) {
 
+        $('#R').remove();
+        $('#D').remove();
+        $('h1').remove();
+
+        let total_votes = 0;
+        for (let elem of count_answers) {
+          total_votes = elem + total_votes;
+        }
+        $('h4').text(total_votes);
 
       });
+
+
 
 
     </script>
