@@ -69,6 +69,7 @@
 
       });
       let backup = [];
+      let count_answers = [];
       $('#S').on('submit', function(event) {
 
         event.preventDefault();
@@ -79,7 +80,8 @@
         for(let answer of answers){
           answer = $(answer);
           save_answer.push(answer.text());
-        }
+          count_answers.push(0);
+        };
 
         $('h1').text(save_question);
         $('#Q').remove();
@@ -93,7 +95,7 @@
 
           $("#R").append(r);
 
-        }
+        };
 
         const submit_b = $(`<button type="submit">submit</button> <button type="submit">done</button>`)
 
@@ -108,11 +110,13 @@
           if (document.getElementById(a).checked) {
 
             document.getElementById(a).checked = false;
-            
+            count_answers[backup.indexOf(a)] ++;
+
 
           };
 
         };
+        console.log(count_answers);
 
 
 
