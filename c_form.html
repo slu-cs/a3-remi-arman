@@ -22,7 +22,7 @@
       <ol>
 
       </ol>
-      <form id = "remi">
+      <form id = "R">
       </form>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -68,15 +68,16 @@
         $(this).closest('li').remove();
 
       });
-
+      let backup = [];
       $('#S').on('submit', function(event) {
 
         event.preventDefault();
         const save_question = $('h3').text();
         const answers = $('span');
         const save_answer = [];
+        backup = save_answer;
         for(let answer of answers){
-          answer = $(answer)
+          answer = $(answer);
           save_answer.push(answer.text());
         }
 
@@ -88,11 +89,32 @@
         $('ol').remove();
 
         for (let a of save_answer) {
-          const r = $(`<input type="radio" id="radio1" name="radio" value= "${a}">`);
-          const w = $(`<label for="radio1">"${a}"</label>`);
-          $("#remi").append(r);
-          $("#remi").append(w);
+          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}">"${a}"</label></ul>`);
+
+          $("#R").append(r);
+
         }
+
+        const submit_b = $(`<button type="submit">submit</button> <button type="submit">done</button>`)
+
+        $("#R").append(submit_b);
+
+      });
+
+      $('#R').on('submit', function(event) {
+
+        event.preventDefault();
+        for (let a of backup) {
+          if (document.getElementById(a).checked) {
+
+            document.getElementById(a).checked = false;
+            
+
+          };
+
+        };
+
+
 
       });
 
