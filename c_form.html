@@ -26,7 +26,8 @@
       </form>
       <form id = "D">
       </form>
-      <h4></h4>
+      <form id = "Final_Result">
+      </form>
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
@@ -133,7 +134,17 @@
         for (let elem of count_answers) {
           total_votes = elem + total_votes;
         }
-        $('h4').text(total_votes);
+
+        const display_TV = $(`<h3>The Number of Total Votes is ${total_votes}.<h3>`);
+        $("#Final_Result").append(display_TV);
+        let i = 0;
+        for (let elem of backup) {
+
+          const display_AV = $(`<h3>The Number of Votes for ${elem} is ${count_answers[i]}.<h3>`);
+          i++;
+          $("#Final_Result").append(display_AV);
+        };
+
 
       });
 
