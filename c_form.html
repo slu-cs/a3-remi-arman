@@ -5,10 +5,10 @@
     <title>JQuery Objects</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-  <body style="background-image : url('https://images.pexels.com/photos/950762/pexels-photo-950762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');" >
+  <body style="background-image : url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg'); background-size:100%" >
 
     <body id="init">
-      <h1 style = "text-align:center">Make Your Poll</h1>
+      <h1 style = "text-align:center; color:#E7970C" class = "font-weight-bold">Make Your Poll</h1>
       <form id="Q" style = "text-align:center">
         <input type="text" id = "q" class = "m-3">
         <button id = "editQ" type="submit" class = "btn-info">Add question</button>
@@ -17,7 +17,7 @@
         <input type="text" id="a"  class = "m-3">
         <button type="submit" class = "btn-info">Add answers</button>
       </form>
-      <h3 class = "m-3"></h3>
+      <h2 class = "m-3 text-capitalize" style = "color:#0A59E3"></h2>
       <ol>
       </ol>
       <form id = "S" style = "text-align:center; padding: 20px">
@@ -44,7 +44,7 @@
 
       // Add a non-empty item to the list
       if (item) {
-        $('h3').text(`${item}`)
+        $('h2').text(`${item}`)
         $('#editQ').text('Edit question')
         }
       });
@@ -60,8 +60,8 @@
       // Add a non-empty item to the list
       if (item) {
       $('ol').append($(`
-            <li class = "m-3">
-             <span>${item}</span>
+            <li class = "m-3 h4" style = "color:#686824">
+             <span style = "color:#5D005A" class = "font-italic h4">${item}</span>
              <button type = "button" class = "btn-danger" aria-label= "Close" >
              <a aria-hidden="true"> &times;</a>
              </button>
@@ -81,7 +81,7 @@
       $('#S').on('submit', function(event) {
 
         event.preventDefault();
-        const save_question = $('h3').text();
+        const save_question = $('h2').text();
         const answers = $('span');
         const save_answer = [];
         backup = save_answer;
@@ -95,7 +95,7 @@
         $('#Q').remove();
         $('#A').remove();
         $('#S').remove();
-        $('h3').remove();
+        $('h2').remove();
         $('ol').remove();
 
         for (let a of save_answer) {
@@ -148,7 +148,7 @@
           $("#Final_Result").append(display_AV);
         };
       });
-      
+
     </script>
   </body>
 </html>
