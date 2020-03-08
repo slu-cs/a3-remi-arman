@@ -7,7 +7,7 @@
   </head>
   <body style="background-image : url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg'); background-size:100%" >
 
-    <body id="init">
+    <body id="init" class = "pt-3">
       <h1 style = "text-align:center; color:#E7970C" class = "font-weight-bold">Make Your Poll</h1>
       <form id="Q" style = "text-align:center">
         <input type="text" id = "q" class = "m-3">
@@ -105,8 +105,8 @@
 
         };
 
-        const submit_b = $(`<button id = "S_Answer" type="submit" class = "btn-success">submit</button>`)
-        const done_b = $(`<button type="submit" class = "btn-primary">done</button>`)
+        const submit_b = $(`<button id = "S_Answer" type="submit" class = "btn-success">Submit</button>`)
+        const done_b = $(`<button type="submit" class = "btn-primary">Done</button>`)
         $("#R").append(submit_b);
         $("#D").append(done_b);
 
