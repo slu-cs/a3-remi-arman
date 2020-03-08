@@ -26,7 +26,7 @@
 
       <form id = "R" class = "m-3">
       </form>
-      <form id = "D" class = "m-3">
+      <form id = "D" class = "m-3" style = "text-align:center; padding: 20px">
       </form>
       <form id = "Final_Result" class = "m-3">
       </form>
@@ -99,14 +99,14 @@
         $('ol').remove();
 
         for (let a of save_answer) {
-          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}">${a}</label></ul>`);
+          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}" class = "font-italic h3 m-3 " style = "color:#5D005A">${a}</label></ul>`);
 
           $("#R").append(r);
 
         };
 
         const submit_b = $(`<button id = "S_Answer" type="submit" class = "btn-success">Submit</button>`)
-        const done_b = $(`<button type="submit" class = "btn-primary">Done</button>`)
+        const done_b = $(`<button type="submit" class = "btn-primary" >Done</button>`)
         $("#R").append(submit_b);
         $("#D").append(done_b);
 
@@ -138,12 +138,12 @@
           total_votes = elem + total_votes;
         }
 
-        const display_TV = $(`<h3>The Number of Total Votes is ${total_votes}.<h3>`);
+        const display_TV = $(`<h3 class = "m-3">The Number of Total Votes is ${total_votes}.<h3>`);
         $("#Final_Result").append(display_TV);
         let i = 0;
         for (let elem of backup) {
 
-          const display_AV = $(`<h3>The Number of Votes for ${elem} is ${count_answers[i]}.<h3>`);
+          const display_AV = $(`<h3 class = "m-3">The Number of Votes for ${elem} is ${count_answers[i]}.<h3>`);
           i++;
           $("#Final_Result").append(display_AV);
         };
