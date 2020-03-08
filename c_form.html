@@ -95,7 +95,7 @@
         $('ol').remove();
 
         for (let a of save_answer) {
-          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}">"${a}"</label></ul>`);
+          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}">${a}</label></ul>`);
 
           $("#R").append(r);
 
