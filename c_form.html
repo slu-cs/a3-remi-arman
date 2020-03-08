@@ -1,8 +1,8 @@
-<!-- Example with a loop over a JQuery object. -->
+
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>JQuery Objects</title>
+    <title>Make a poll!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body style="background-image : url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg'); background-size:100%" >
@@ -21,7 +21,7 @@
       <ol>
       </ol>
       <form id = "S" style = "text-align:center; padding: 20px">
-        <button type="submit" class = "btn-success">Submit</button>
+        <button type="submit" class = "btn-success" >Submit</button>
       </form>
 
       <form id = "R" class = "m-3">
@@ -37,27 +37,26 @@
       $('#Q').on('submit', function(event) {
       event.preventDefault();
 
-              // Grab the text and empty the box
       const input = $('#q');
       const item = input.val();
       input.val('');
 
-      // Add a non-empty item to the list
+
       if (item) {
         $('h2').text(`${item}?`)
         $('#editQ').text('Edit question')
         }
       });
-            // Add to the to-do list
+
       $('#A').on('submit', function(event) {
       event.preventDefault();
 
-              // Grab the text and empty the box
+
       const input = $('#a');
       const item = input.val();
       input.val('');
 
-      // Add a non-empty item to the list
+
       if (item) {
       $('ol').append($(`
             <li class = "m-3 h4" style = "color:#686824">
@@ -71,7 +70,7 @@
       });
 
 
-      // Delete from the to-do list
+      // Delete from the answers
       $('ol').on('click', 'button', function(event) {
         $(this).closest('li').remove();
 
@@ -129,7 +128,7 @@
       });
       $('#D').on('submit', function(event) {
         event.preventDefault();
-        
+
         $('#R').remove();
         $('#D').remove();
         $('h1').remove();
