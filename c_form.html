@@ -8,7 +8,7 @@
   <body style="background-image : url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Minimalist-Crumpled-Paper-Simple-Background-Image.jpg'); background-size:100%" >
 
     <body id="init" class = "pt-3">
-      <h1 style = "text-align:center; color:#E7970C" class = "font-weight-bold">Make Your Poll</h1>
+      <h1 style = "text-align:center; color:#E7970C" class = "font-weight-bold text-capitalize">Make Your Poll</h1>
       <form id="Q" style = "text-align:center">
         <input type="text" id = "q" class = "m-3">
         <button id = "editQ" type="submit" class = "btn-info">Add question</button>
@@ -44,7 +44,7 @@
 
       // Add a non-empty item to the list
       if (item) {
-        $('h2').text(`${item}`)
+        $('h2').text(`${item}?`)
         $('#editQ').text('Edit question')
         }
       });
@@ -61,7 +61,7 @@
       if (item) {
       $('ol').append($(`
             <li class = "m-3 h4" style = "color:#686824">
-             <span style = "color:#5D005A" class = "font-italic h4">${item}</span>
+             <span style = "color:#5D005A" class = "font-italic h4 text-capitalize">${item}</span>
              <button type = "button" class = "btn-danger" aria-label= "Close" >
              <a aria-hidden="true"> &times;</a>
              </button>
@@ -99,7 +99,7 @@
         $('ol').remove();
 
         for (let a of save_answer) {
-          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}" class = "font-italic h3 m-3 " style = "color:#5D005A">${a}</label></ul>`);
+          const r = $(`<ul><input type="radio" id="${a}" name="radio" value= "${a}"> <label for="${a}" class = "font-italic h3 m-3 text-capitalize" style = "color:#5D005A">${a}</label></ul>`);
 
           $("#R").append(r);
 
@@ -128,7 +128,8 @@
 
       });
       $('#D').on('submit', function(event) {
-
+        event.preventDefault();
+        
         $('#R').remove();
         $('#D').remove();
         $('h1').remove();
